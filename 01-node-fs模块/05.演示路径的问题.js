@@ -12,9 +12,21 @@ const fs = require('fs')
 }) */
 
 // 移植性差，不利于维护
-fs.readFile("/Users/learn/node/heima/code/node基础/node-base/01-node-fs模块/05.演示路径的问题.js", 'utf8', function(err, dataStr) {
+/* fs.readFile("/Users/learn/node/heima/code/node基础/node-base/01-node-fs模块/05.演示路径的问题.js", 'utf8', function(err, dataStr) {
     if (err) {
         return console.log('文件读取失败！' + err.message);
     }
+    console.log('文件读取成功！' + dataStr);
+}) */
+
+// __dirname 表示当前代码所在的文件 所处的目录
+console.log(__dirname); // /Users/learn/node/heima/code/node基础/node-base/01-node-fs模块
+
+// 注意：不能这么写 __dirname + './files/1.txt'
+fs.readFile(__dirname + '/files/1.txt', 'utf8', function(err, dataStr) {
+    if (err) {
+        return console.log('文件读取失败！' + err.message);
+    }
+
     console.log('文件读取成功！' + dataStr);
 })
