@@ -9,3 +9,11 @@ module.exports.sayHello = function() {
 }
 
 module.exports.age = age 
+
+// 让 module.exports 指向一个全新的对象
+module.exports = {
+    nickName: '小黑',
+    syaHi() {
+        console.log('Hi ~');
+    }
+}
