@@ -19,6 +19,7 @@ server.on('request', (req, res) => {
     // const fPath = path.join(__dirname, url)
 
     // 为满足用户直接输入ip进入页面和不用加clock目录 将fPath进行改写
+    // 5.1 预定义一个空白的文件存放路径
     let fPath = ""
     if (url === '/') {
         fPath = path.join(__dirname, './clock/index.html')
